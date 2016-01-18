@@ -29,21 +29,19 @@
     	    	
     	<!-- Websocket -->
     	<script type="text/javascript">
+    		var chatUsername = '';
 	    	// Create a socket instance
 	    	var socket = new WebSocket('ws://localhost:8081');
 	
 	    	// Open the socket
 	    	socket.onopen = function(event) {
 	    		
-	    		socket.send("new");
-	    		
 	    		document.getElementById('chat-input').disabled = false;
 	    		
 	    		// Listen for messages
 	    		socket.onmessage = function(event) {
-	    			//console.log('Client received a message: ' + event.data);
-	    			if (event.data == "new") {
-	    				
+	    			if (/newClient_()*/.test(event.data)) {
+	    				chatUsername = event.data.substr(12);
 	    			}
 	    			else {
 	    				document.getElementById('chat-textarea').value += event.data + '\n';	
@@ -55,15 +53,12 @@
 	    			//console.log('Client notified socket has closed',event);
 	    		};
 	    		
-	    		// To close the socket....
-	    		//socket.close()
-	    		
 	    	};
 	    	
 	    	function sendMessageToServer() {
 	    		var msg = document.getElementById('chat-input').value;
 	    		if (msg != '') {
-	    			socket.send(myip + ': ' + msg);
+	    			socket.send(chatUsername + "(" + myip + '): ' + msg);
 		    		document.getElementById('chat-input').value = '';
 	    		}
 	    		

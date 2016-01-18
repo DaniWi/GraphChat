@@ -1,17 +1,18 @@
 var ws = require("nodejs-websocket")
 
 var clients = [];
+var clientID = 1;
 
 var server = ws.createServer(function (conn) {
-	console.log("New connection")
+	//console.log("New connection")
 	clients.push(conn);
+	conn.sendText("newClient_()Client" + clientID);
+	clientID = clientID + 1;
 	
 	conn.on("text", function (str) {
-		//console.log("Received "+str)
-		//conn.sendText(str)
 		clients.forEach(function(client) {
 		      client.send(str);
-		});
+		});		
 	})
 	
 	conn.on("close", function (code, reason) {
