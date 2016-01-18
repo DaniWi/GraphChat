@@ -1,5 +1,5 @@
 Projekt:
-läuft auf TomCat 8
+lÃ¤uft auf TomCat 8
 Neo4J-Datenbank
 
 Datenbank:
@@ -7,11 +7,11 @@ Benutzername: neo4j
 Passwort: user
 Datenbankname: default.graphdb
 
-Da das War-File zu groß für U2l ist, habe ich es auf Github geladen:
-https://github.com/DaniWiGraphChat
+Da das War-File zu groÃŸ fÃ¼r U2l ist, habe ich es auf Github geladen:
+https://github.com/DaniWi/GraphChat
 
 1.War-File von Github downloaden und in Eclipse importieren
-2.default.graphdb mit Neo4J öffnen und somit Datenbankserver starten
+2.default.graphdb mit Neo4J Ã¶ffnen und somit Datenbankserver starten
 3.In WebConten/js die Datei WebSocketServer.js mit Node.js starten ("node WebSocketServer.js")
 4.In Eclipse Server starten
 5.Im Browser localhost:8080/GraphChat/ aufrufen, somit landet man auf der Startseite
