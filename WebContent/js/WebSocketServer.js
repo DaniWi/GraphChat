@@ -19,4 +19,4 @@ var server = ws.createServer(function (conn) {
 		var index = clients.indexOf(conn);
 		clients.splice(index,1);
 	})
-}).listen(8080)
+}).listen(8081)

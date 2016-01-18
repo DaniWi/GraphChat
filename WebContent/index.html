@@ -18,7 +18,7 @@
 		 
 		<!-- Google Geocoding Service -->
     	<script async defer
-      	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPeCD7QWYoaii2W4U5ei0i0NX00nbbki8&callback=initMap">
+      	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPeCD7QWYoaii2W4U5ei0i0NX00nbbki8">
     	</script>
     	
     	<!-- socket.io -->
@@ -30,7 +30,7 @@
     	<!-- Websocket -->
     	<script type="text/javascript">
 	    	// Create a socket instance
-	    	var socket = new WebSocket('ws://localhost:8080');
+	    	var socket = new WebSocket('ws://localhost:8081');
 	
 	    	// Open the socket
 	    	socket.onopen = function(event) {
@@ -134,8 +134,8 @@
 			    accessToken: 'pk.eyJ1Ijoid2l0c2NoZGEiLCJhIjoiY2lqZmg3emM2MDAwaXY1bTR3Mjh6ankwbCJ9.u2kMmVS-6xUdCx47L3g7KA'
 			}).addTo(map);
 			
-			var geocoder;
-			var marker;
+			geocoder = new google.maps.Geocoder();
+			marker = new Array();
 			
 			function loadPersons(){
 				var list = document.getElementById("namelist");
@@ -173,11 +173,6 @@
 				      alert('Geocode was not successful for the following reason: ' + status);
 				    }
 				  });
-				}
-			
-			function initMap() {
-				geocoder = new google.maps.Geocoder();
-				marker = new Array();
 				}
 			
 			function openPopup(i){
