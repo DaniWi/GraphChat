@@ -12,6 +12,6 @@ https://github.com/DaniWiGraphChat
 
 1.War-File von Github downloaden und in Eclipse importieren
 2.default.graphdb mit Neo4J öffnen und somit Datenbankserver starten
-3.In WebConten/js die Datei WebSocketServer.js mit Node.js starten ("node WebSocketServer.js")
+3.In WebConten/js die Datei WebSocketServer.js mit Node.js starten ("node WebSocketServer.js"). (Bei Bedarf im Project-root mittels 'npm install' die Dependencies 'socket.io' und 'nodejs-websocket' installieren)
 4.In Eclipse Server starten
 5.Im Browser localhost:8080/GraphChat/ aufrufen, somit landet man auf der Startseite
