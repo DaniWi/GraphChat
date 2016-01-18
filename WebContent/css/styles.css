@@ -50,5 +50,23 @@ form input {
 	padding: 10px 0;
 }
 
-#map { height: 300px; }
+#map {
+	height: 300px;
+	margin-bottom: 15px; 
+}
 
+#chat-textarea {
+	resize: none;
+	width: 100%;
+	height: 300px;
+	margin-bottom: 10px;
+}
+
+#chat-input {
+	resize: none;
+	width: 100%;
+}
+
+#chat-button {
+	width: 100%;
+}
